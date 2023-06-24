@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">Ride U Rent POE ST10090631</h1>
+        <p class="lead">This is the Demo for RideURent by ST10090631. Please login to begin.</p>
+        
+    </section>
+
+
+    <div>
+        @Html.ActionLink("List Car Details", "Index", "CAR_ST10090631") <br />
+        @Html.ActionLink("List Driver Details", "Index", "Driver_ST10090631")<br />
+        @Html.ActionLink("List Inspector Details", "Index", "Inspector_ST10090631")<br />
+        @Html.ActionLink("List Rental Details", "Index", "Rental_ST10090631")<br />
+        @Html.ActionLink("List Return Details", "Index", "Return_ST10090631")
+
+    </div>

@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="POE_PART2_Ride_You_Rent_ST10090631Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CAR_ST10090631">
+          <Key>
+            <PropertyRef Name="CarNo" />
+          </Key>
+          <Property Name="CarNo" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="Carmake" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Model" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="BodyType" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="KilometersTravelled" Type="int" Nullable="false" />
+          <Property Name="ServicedKilometers" Type="int" Nullable="false" />
+          <Property Name="Avalible" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DRIVER_ST10090631">
+          <Key>
+            <PropertyRef Name="DriverId" />
+          </Key>
+          <Property Name="DriverId" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="DriverName" Type="varchar" MaxLength="100" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Mobile" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="INSPECTOR_ST10090631">
+          <Key>
+            <PropertyRef Name="InspectorId" />
+          </Key>
+          <Property Name="InspectorId" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="InspectorName" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Mobile" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RENTAL_ST10090631">
+          <Key>
+            <PropertyRef Name="RentalId" />
+          </Key>
+          <Property Name="RentalId" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="DriverId" Type="varchar" MaxLength="4" />
+          <Property Name="CarNo" Type="varchar" MaxLength="6" />
+          <Property Name="InspectorId" Type="varchar" MaxLength="4" />
+          <Property Name="RentalFee" Type="varchar" MaxLength="100" />
+          <Property Name="StartDate" Type="varchar" MaxLength="100" />
+          <Property Name="EndDate" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="RETURN_ST10090631">
+          <Key>
+            <PropertyRef Name="ReturnId" />
+          </Key>
+          <Property Name="ReturnId" Type="int" Nullable="false" />
+          <Property Name="DriverId" Type="varchar" MaxLength="4" />
+          <Property Name="CarNo" Type="varchar" MaxLength="6" />
+          <Property Name="InspectorId" Type="varchar" MaxLength="6" />
+          <Property Name="ReturnDate" Type="int" />
+          <Property Name="ElapsedDate" Type="int" />
+          <Property Name="Fine" Type="int" />
+        </EntityType>
+        <EntityContainer Name="POE_PART2_Ride_You_Rent_ST10090631ModelStoreContainer">
+          <EntitySet Name="CAR_ST10090631" EntityType="Self.CAR_ST10090631" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DRIVER_ST10090631" EntityType="Self.DRIVER_ST10090631" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="INSPECTOR_ST10090631" EntityType="Self.INSPECTOR_ST10090631" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RENTAL_ST10090631" EntityType="Self.RENTAL_ST10090631" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RETURN_ST10090631" EntityType="Self.RETURN_ST10090631" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="POE_PART2_Ride_You_Rent_ST10090631Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CAR_ST10090631">
+          <Key>
+            <PropertyRef Name="CarNo" />
+          </Key>
+          <Property Name="CarNo" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Carmake" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BodyType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="KilometersTravelled" Type="Int32" Nullable="false" />
+          <Property Name="ServicedKilometers" Type="Int32" Nullable="false" />
+          <Property Name="Avalible" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DRIVER_ST10090631">
+          <Key>
+            <PropertyRef Name="DriverId" />
+          </Key>
+          <Property Name="DriverId" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DriverName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="INSPECTOR_ST10090631">
+          <Key>
+            <PropertyRef Name="InspectorId" />
+          </Key>
+          <Property Name="InspectorId" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="InspectorName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RENTAL_ST10090631">
+          <Key>
+            <PropertyRef Name="RentalId" />
+          </Key>
+          <Property Name="RentalId" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DriverId" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CarNo" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="InspectorId" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="RentalFee" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EndDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RETURN_ST10090631">
+          <Key>
+            <PropertyRef Name="ReturnId" />
+          </Key>
+          <Property Name="ReturnId" Type="Int32" Nullable="false" />
+          <Property Name="DriverId" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CarNo" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="InspectorId" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="ReturnDate" Type="Int32" />
+          <Property Name="ElapsedDate" Type="Int32" />
+          <Property Name="Fine" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="POE_PART2_Ride_You_Rent_ST10090631Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CAR_ST10090631" EntityType="Self.CAR_ST10090631" />
+          <EntitySet Name="DRIVER_ST10090631" EntityType="Self.DRIVER_ST10090631" />
+          <EntitySet Name="INSPECTOR_ST10090631" EntityType="Self.INSPECTOR_ST10090631" />
+          <EntitySet Name="RENTAL_ST10090631" EntityType="Self.RENTAL_ST10090631" />
+          <EntitySet Name="RETURN_ST10090631" EntityType="Self.RETURN_ST10090631" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="POE_PART2_Ride_You_Rent_ST10090631ModelStoreContainer" CdmEntityContainer="POE_PART2_Ride_You_Rent_ST10090631Entities">
+          <EntitySetMapping Name="CAR_ST10090631">
+            <EntityTypeMapping TypeName="POE_PART2_Ride_You_Rent_ST10090631Model.CAR_ST10090631">
+              <MappingFragment StoreEntitySet="CAR_ST10090631">
+                <ScalarProperty Name="CarNo" ColumnName="CarNo" />
+                <ScalarProperty Name="Carmake" ColumnName="Carmake" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="BodyType" ColumnName="BodyType" />
+                <ScalarProperty Name="KilometersTravelled" ColumnName="KilometersTravelled" />
+                <ScalarProperty Name="ServicedKilometers" ColumnName="ServicedKilometers" />
+                <ScalarProperty Name="Avalible" ColumnName="Avalible" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DRIVER_ST10090631">
+            <EntityTypeMapping TypeName="POE_PART2_Ride_You_Rent_ST10090631Model.DRIVER_ST10090631">
+              <MappingFragment StoreEntitySet="DRIVER_ST10090631">
+                <ScalarProperty Name="DriverId" ColumnName="DriverId" />
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INSPECTOR_ST10090631">
+            <EntityTypeMapping TypeName="POE_PART2_Ride_You_Rent_ST10090631Model.INSPECTOR_ST10090631">
+              <MappingFragment StoreEntitySet="INSPECTOR_ST10090631">
+                <ScalarProperty Name="InspectorId" ColumnName="InspectorId" />
+                <ScalarProperty Name="InspectorName" ColumnName="InspectorName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RENTAL_ST10090631">
+            <EntityTypeMapping TypeName="POE_PART2_Ride_You_Rent_ST10090631Model.RENTAL_ST10090631">
+              <MappingFragment StoreEntitySet="RENTAL_ST10090631">
+                <ScalarProperty Name="RentalId" ColumnName="RentalId" />
+                <ScalarProperty Name="DriverId" ColumnName="DriverId" />
+                <ScalarProperty Name="CarNo" ColumnName="CarNo" />
+                <ScalarProperty Name="InspectorId" ColumnName="InspectorId" />
+                <ScalarProperty Name="RentalFee" ColumnName="RentalFee" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RETURN_ST10090631">
+            <EntityTypeMapping TypeName="POE_PART2_Ride_You_Rent_ST10090631Model.RETURN_ST10090631">
+              <MappingFragment StoreEntitySet="RETURN_ST10090631">
+                <ScalarProperty Name="ReturnId" ColumnName="ReturnId" />
+                <ScalarProperty Name="DriverId" ColumnName="DriverId" />
+                <ScalarProperty Name="CarNo" ColumnName="CarNo" />
+                <ScalarProperty Name="InspectorId" ColumnName="InspectorId" />
+                <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+                <ScalarProperty Name="ElapsedDate" ColumnName="ElapsedDate" />
+                <ScalarProperty Name="Fine" ColumnName="Fine" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

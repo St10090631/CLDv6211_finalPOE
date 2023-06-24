@@ -1,0 +1,66 @@
+﻿@model WebApplication5.Models.CAR_ST10090631
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CAR_ST10090631</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Carmake)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Carmake)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BodyType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BodyType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KilometersTravelled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KilometersTravelled)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServicedKilometers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServicedKilometers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Avalible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Avalible)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CarNo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebApplication5.Models.CAR_ST10090631>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Carmake)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BodyType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KilometersTravelled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ServicedKilometers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Avalible)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Carmake)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BodyType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KilometersTravelled)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServicedKilometers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Avalible)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CarNo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CarNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CarNo })
+        </td>
+    </tr>
+}
+
+</table>
